@@ -90,17 +90,17 @@ static NSDictionary *sharedSettings = NULL;
 	NSString *filename = [files objectAtIndex:imageNumber];
 	if (!filename) return;
 	
-	NSURL *url = [[NSURL alloc] initFileURLWithPath:filename];
+	NSURL *URL = [[NSURL alloc] initFileURLWithPath:filename];
 	NSError *error = NULL;
 	
 	DMScreenSettings screenSetting = [(NSNumber *)[[self settings] objectForKey:DMUserDefaultsKeyDesktopScreens] unsignedIntegerValue];
 	if (screenSetting == DMScreenSettingsAllScreens) {
 		for (NSScreen *screen in [NSScreen screens])
-			[[NSWorkspace sharedWorkspace] setDesktopImageURL:url forScreen:screen options:[self settings] error:&error];
+			[[NSWorkspace sharedWorkspace] setDesktopImageURL:URL forScreen:screen options:[self settings] error:&error];
 	}
 	else if (screenSetting = DMScreenSettingsMainScreenOnly)
-		[[NSWorkspace sharedWorkspace] setDesktopImageURL:url forScreen:[NSScreen mainScreen] options:[self settings] error:&error];
-	[url release];
+		[[NSWorkspace sharedWorkspace] setDesktopImageURL:URL forScreen:[NSScreen mainScreen] options:[self settings] error:&error];
+	[URL release];
 	
 	if (error) NSLog(@"Error while changing desktop: %@", [error localizedDescription]);
 }

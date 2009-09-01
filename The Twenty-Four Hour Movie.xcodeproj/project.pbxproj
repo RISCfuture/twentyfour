@@ -28,6 +28,8 @@
 		01826266100694750089CDFC /* DMConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 018262631006941E0089CDFC /* DMConstants.m */; };
 		01826297100697D40089CDFC /* twentyfour in CopyFiles */ = {isa = PBXBuildFile; fileRef = 01826296100697D40089CDFC /* twentyfour */; };
 		01C6A7B01044F0D600E5DBB6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 01C6A7AF1044F0D600E5DBB6 /* Localizable.strings */; };
+		01E338DF104CDACA00949973 /* DMDragDropBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E338DE104CDACA00949973 /* DMDragDropBox.m */; };
+		01E33923104CE6E500949973 /* DMFileDropAreaDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E33922104CE6E500949973 /* DMFileDropAreaDelegate.m */; };
 		01E8020510043441003281A6 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01E8020410043441003281A6 /* MainMenu.xib */; };
 		01E8020710043448003281A6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 01E8020610043448003281A6 /* InfoPlist.strings */; };
 		01E8023110044BE9003281A6 /* AlertCautionIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 01E8023010044BE9003281A6 /* AlertCautionIcon.icns */; };
@@ -95,6 +97,10 @@
 		01826296100697D40089CDFC /* twentyfour */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = twentyfour; path = build/Release/twentyfour; sourceTree = SOURCE_ROOT; };
 		01C6A7AD1044F0D200E5DBB6 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
 		01E19873100C0C6300CA94AF /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		01E338DD104CDACA00949973 /* DMDragDropBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMDragDropBox.h; sourceTree = "<group>"; };
+		01E338DE104CDACA00949973 /* DMDragDropBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMDragDropBox.m; sourceTree = "<group>"; };
+		01E33921104CE6E500949973 /* DMFileDropAreaDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMFileDropAreaDelegate.h; sourceTree = "<group>"; };
+		01E33922104CE6E500949973 /* DMFileDropAreaDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMFileDropAreaDelegate.m; sourceTree = "<group>"; };
 		01E801FF1004343C003281A6 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		01E802001004343C003281A6 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		01E8020810043455003281A6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
@@ -139,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				018261D710068DE30089CDFC /* Controllers */,
+				01E33920104CE6D800949973 /* Delegates */,
 				018261DA10068DE30089CDFC /* Helpers */,
 				018261DD10068DE30089CDFC /* main.m */,
 				018261DE10068DE30089CDFC /* Managers */,
@@ -189,6 +196,8 @@
 			isa = PBXGroup;
 			children = (
 				018261EA10068DE30089CDFC /* Value Transformers */,
+				01E338DD104CDACA00949973 /* DMDragDropBox.h */,
+				01E338DE104CDACA00949973 /* DMDragDropBox.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -238,6 +247,15 @@
 				018262631006941E0089CDFC /* DMConstants.m */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		01E33920104CE6D800949973 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				01E33921104CE6E500949973 /* DMFileDropAreaDelegate.h */,
+				01E33922104CE6E500949973 /* DMFileDropAreaDelegate.m */,
+			);
+			path = Delegates;
 			sourceTree = "<group>";
 		};
 		01E801FE1004343C003281A6 /* Resources */ = {
@@ -405,6 +423,8 @@
 				0182620710068DE30089CDFC /* DMPeriodValueTransformer.m in Sources */,
 				013DDB0E104CBD1100129CAF /* DMMappingValueTransformer.m in Sources */,
 				013DDB75104CC87700129CAF /* DMReversibleMappingValueTransformer.m in Sources */,
+				01E338DF104CDACA00949973 /* DMDragDropBox.m in Sources */,
+				01E33923104CE6E500949973 /* DMFileDropAreaDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

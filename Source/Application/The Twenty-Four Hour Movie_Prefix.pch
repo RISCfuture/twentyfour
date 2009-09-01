@@ -14,3 +14,5 @@
 
 #import "DMSequenceManager.h"
 #import "DMLaunchAgentSettings.h"
+
+#import "DMDragDropBox.h"
