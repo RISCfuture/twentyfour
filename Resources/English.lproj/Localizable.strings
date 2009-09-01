@@ -1,0 +1,35 @@
+/* %@ = folder path */
+"I couldn't create the %@ folder. I need to be able to create this folder to continue." = "I couldn't create the %@ folder. I need to be able to create this folder to continue.";
+
+/* No comment provided by engineer. */
+"I couldn't install the helper application into this program's Application Support folder. I must be able to do so to continue." = "I couldn't install the helper application into this program's Application Support folder. I must be able to do so to continue.";
+
+/* %@ = file blocking a folder path */
+"Please move the %@ file." = "Please move the %@ file.";
+
+/* %@ = folder blocking a file */
+"Please move the folder at %@." = "Please move the folder at %@.";
+
+/* No comment provided by engineer. */
+"There is a file blocking a folder I need to create." = "There is a file blocking a folder I need to create.";
+
+/* No comment provided by engineer. */
+"There is a folder blocking a file I need to create." = "There is a folder blocking a file I need to create.";
+
+/* No comment provided by engineer. */
+"I couldn't activate the launch agent. Your desktop picture will be unchanged." = "I couldn't activate the launch agent. Your desktop picture will be unchanged.";
+
+/* No comment provided by engineer. */
+"I wasn't able to write your settings to a launch agent file." = "I wasn't able to write your settings to a launch agent file.";
+
+/* No comment provided by engineer. */
+"More information might be available from Console." = "More information might be available from Console.";
+
+/* button */
+"OK" = "OK";
+
+/* %@ = path to launch agent plist */
+"Please move the folder at %@ and restart this program." = "Please move the folder at %@ and restart this program.";
+
+/* button */
+"Quit" = "Quit";
