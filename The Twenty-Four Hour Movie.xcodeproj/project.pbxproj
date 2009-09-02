@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		012FC4EF104F22F700E18D6C /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 012FC4EE104F22F700E18D6C /* Icon.icns */; };
 		013DDB0E104CBD1100129CAF /* DMMappingValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 013DDB0D104CBD1100129CAF /* DMMappingValueTransformer.m */; };
 		013DDB75104CC87700129CAF /* DMReversibleMappingValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 013DDB74104CC87700129CAF /* DMReversibleMappingValueTransformer.m */; };
 		01526A13100BF1E400C6190B /* ExecutableInstaller in CopyFiles */ = {isa = PBXBuildFile; fileRef = 01526A12100BF1E400C6190B /* ExecutableInstaller */; };
@@ -61,6 +62,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		012FC4EE104F22F700E18D6C /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		013DDB0C104CBD1100129CAF /* DMMappingValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMMappingValueTransformer.h; sourceTree = "<group>"; };
 		013DDB0D104CBD1100129CAF /* DMMappingValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMMappingValueTransformer.m; sourceTree = "<group>"; };
 		013DDB73104CC87700129CAF /* DMReversibleMappingValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMReversibleMappingValueTransformer.h; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 			children = (
 				01826296100697D40089CDFC /* twentyfour */,
 				01E8023010044BE9003281A6 /* AlertCautionIcon.icns */,
+				012FC4EE104F22F700E18D6C /* Icon.icns */,
 				01E8020810043455003281A6 /* Info.plist */,
 				01E8020610043448003281A6 /* InfoPlist.strings */,
 				01C6A7AF1044F0D600E5DBB6 /* Localizable.strings */,
@@ -391,6 +394,7 @@
 				01E8023110044BE9003281A6 /* AlertCautionIcon.icns in Resources */,
 				0182612110055FC00089CDFC /* OpenDesktopPreferencePane.scpt in Resources */,
 				01C6A7B01044F0D600E5DBB6 /* Localizable.strings in Resources */,
+				012FC4EF104F22F700E18D6C /* Icon.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
