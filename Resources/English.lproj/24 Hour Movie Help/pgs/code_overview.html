@@ -1,0 +1,96 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<title>The Twenty-Four Hour Movie source code overview</title>
+		<meta name="keywords" content="source code, developer" />
+		<meta name="project" content="The Twenty-Four Hour Movie Help" />
+		<meta name="description" content="An overview of the The Twenty-Four Hour Movie codebase." />
+		<link href="../sty/layout.css" rel="stylesheet" type="text/css" />
+		<link href="../sty/typography.css" rel="stylesheet" type="text/css" />
+		<link href="../sty/print.css" rel="stylesheet" type="text/css" media="print" />
+	</head>
+
+	<body class="en">
+		<div id="Nav">
+			<a id="code_overview" />
+			<div id="NavLeft"><a class="NavLinkLeft" href="help:anchor='access' bookID=24 Hour Movie Help">Home</a></div>
+			<!-- div id="NavRight"><a class="NavLinkRight" href="help:anchor='index' bookID=24 Hour Movie Help">Index</a></div -->
+		</div>
+		
+		<div class="AppleTopic">
+			<div class="Section">
+				<div id="Header">
+					<div id="Icon"><img id="iconimg" src="../gfx/icon32.png" alt="The Twenty-Four Hour Movie icon" height="32" width="32" /></div>
+					<div class="Name">The Twenty-Four Hour Movie source code overview</div>
+				</div>
+				<div class="AppleTopicBody">
+					<div class="Intro">
+						<p class="Para">The Twenty-Four Hour Movie for Mac OS X is a fully Cocoa-native application developed in Objective-C. The Twenty-Four Hour Movie uses the following Cocoa technologies:</p>
+						<ul class="ListDescriptor">
+							<li>
+								<div class="Term">Launch Agents:&nbsp;</div>
+								<div class="Description">The desktop is periodically changed by use of a launch agent that is executed periodically, saving the memory overhead of having a daemon open continuously.</div>
+							</li>
+							<li>
+								<div class="Term">Cocoa Bindings:&nbsp;</div>
+								<div class="Description">Model objects are all Key-Value Coding compliant, and view controls almost always have their attributes set via Cocoa Bindings.</div>
+							</li>
+							<li>
+								<div class="Term">Drag and Drop:&nbsp;</div>
+								<div class="Description">The folder view has been subclassed to add Cocoa drag-and-drop support.</div>
+							</li>
+						</ul>
+						
+						<h2>Documentation</h2>
+						<p class="Para">All public classes and methods in the The Twenty-Four Hour Movie codebase are documented comprehensively using the <a href="http://developer.apple.com/opensource/tools/headerdoc.html">HeaderDoc</a> format. The best way to understand a class&rsquo;s purpose and functionality is to read its &ldquo;.h&rdquo; file, which contains HeaderDoc documentation for the class and its public methods. Documentation for private methods or overridden methods, should you need it, is available in the &ldquo;.m&rdquo; file for the class, in basic C block comment syntax.</p>
+						
+						<h2>Descriptive Overview</h2>
+						<p class="Para">The Xcode project is split into two targets, the front-end application and the helper tool. The application sits in the user&rsquo;s Applications folder and allows the user to adjust the desktop settings. The helper tool is installed by the application into the Application Support subfolder, and is launched by the launch agent to change the desktop.</p>
+						
+						<p class="Para"><span class="EmphasisDisplay">Launch Agent and Helper Tool</span></p>
+						<p class="Para">The launch agent property list file is generated on first run and installed <span class="CodeBody">~/Library/LaunchAgents</span> folder. This file contains some o the settings (for instance, its relaunch frequency corresponds to the frequency of desktop image changes), while others are stored in the user defaults property list. The launch agent is configured to execute the helper tool.</p>
+						<p class="Para">The helper tool uses the <span class="CodeUnderline">DMDesktopManager</span> class to calculate which image is to be displayed, and then changes the desktop.</p>
+						
+						<p class="Para"><span class="EmphasisDisplay">Application</span></p>
+						<p class="Para">The first responder for most application events is <span class="CodeBody"><span class="CodeUnderline">DMMainWindowController</span></span>. This class responds to events from the main window.</p>
+						<p class="Para">The main window contains a drop area for image folders, an <span class="CodeBody">NSBox</span> subclass called <span class="CodeBody"><span class="CodeUnderline">DMDragDropBox</span></span>. The drag-drop box delegates its drag-and-drop events to a <span class="CodeBody"><span class="CodeUnderline">DMFileDropAreaDelegate</span></span> instance.</p>
+						<p class="Para"><span class="CodeBody"><span class="CodeUnderline">DMLaunchAgentSettings</span></span> is a KVO-observing class that acts as a Cocoa Bindings front for the launch agent property list. When its key values change, this class writes the new values to the property list file.</p>
+						<p class="Para">Calculating which image should be displayed according to the current time is the work of the <span class="CodeBody"><span class="CodeUnderline">DMSequenceManager</span></span> singleton.</p>
+						<p class="Para">Startup tasks such as initializing value transformers and user default are handled by the <span class="CodeBody"><span class="CodeUnderline">DMStartup</span></span> nib instance.</p>
+						
+						<table type="Multicolumn" cols="2" border="0" cellspacing="2" cellpadding="2">
+							<tr class="TableHead">
+								<th>
+									<div class="TableHead">To learn about</div>
+								</th>
+								<th>
+									<div class="TableHead">Go to</div>
+								</th>
+							</tr>
+							<tr>
+								<td>
+									<p class="Para">How to contribute to the The Twenty-Four Hour Movie project</p>
+								</td>
+								<td>
+									<p class="Para"><a href="help:anchor='edit_code' bookID=24 Hour Movie Help">Add to or modify the code for The Twenty-Four Hour Movie</a></p>
+									<p class="Para"><a href="help:anchor='redistribution_license' bookID=24 Hour Movie Help">View the license for redistributing modified copies of The Twenty-Four Hour Movie</a></p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<p class="Para">The The Twenty-Four Hour Movie project home page</p>
+								</td>
+								<td>
+									<p class="Para"><a href="http://github.com/RISCfuture/twentyfour">The Twenty-Four Hour Movie developer project site</a></p>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

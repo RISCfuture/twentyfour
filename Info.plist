@@ -29,9 +29,9 @@
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
 	<key>CFBundleHelpBookFolder</key>
-	<string>Twenty-Four Hour Movie Help</string>
+	<string>24 Hour Movie Help</string>
 	<key>CFBundleHelpBookName</key>
-	<string>Twenty-Four Hour Movie Help</string>
+	<string>24 Hour Movie Help</string>
 	<key>NSSupportsSuddenTermination</key>
 	<string>YES</string>
 </dict>

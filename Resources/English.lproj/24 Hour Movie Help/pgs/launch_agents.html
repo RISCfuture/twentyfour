@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<title>About launch agents</title>
+		<meta name="keywords" content="launch agent, memory leak" />
+		<meta name="project" content="The Twenty-Four Hour Movie Help" />
+		<meta name="description" content="Learn how the program changes your desktop without staying open." />
+		<link href="../sty/layout.css" rel="stylesheet" type="text/css" />
+		<link href="../sty/typography.css" rel="stylesheet" type="text/css" />
+		<link href="../sty/print.css" rel="stylesheet" type="text/css" media="print" />
+	</head>
+
+	<body class="en">
+		<div id="Nav">
+			<a id="launch_agents" />
+			<div id="NavLeft"><a class="NavLinkLeft" href="help:anchor='access' bookID=24 Hour Movie Help">Home</a></div>
+			<!-- div id="NavRight"><a class="NavLinkRight" href="help:anchor='index' bookID=24 Hour Movie Help">Index</a></div -->
+		</div>
+		
+		<div class="AppleTopic">
+			<div class="Section">
+				<div id="Header">
+					<div id="Icon"><img id="iconimg" src="../gfx/icon32.png" alt="The Twenty-Four Hour Movie icon" height="32" width="32" /></div>
+					<div class="Name">About launch agents</div>
+				</div>
+				<div class="AppleTopicBody">
+					<div class="Intro">
+						<p class="Para">When The Twenty-Four Hour Movie is installed, it does not create any &ldquo;daemons.&rdquo; Daemons are invisible programs that stay open from the moment you start your computer. These daemons use your computer&rsquo;s resources, and if poorly written, can take up more and more memory until you&rsquo;re forced to restart your computer.</p>
+						<p class="Para">To avoid this problem, The Twenty-Four Hour Movie uses a Mac OS X technology called Launch Agents to periodically change your desktop. Launch agents are programs that can be started on a regular schedule. (If you are familiar with cron jobs, launch agents are very similar.) The helper tool installed by The Twenty-Four Hour Movie is controlled by a launch agent. It is launched at regular intervals, it changes your desktop, and then it quits immediately (not hanging around to continue to waste resources). The tool is only launched when needed.</p>
+						<p class="Para">The launch agent is not a privileged tool. It is installed into your user Library folder, and runs with user permissions, as opposed to root permissions. Programs that run with root permissions are given wide leverage to edit many files, even files that are critical to your computer and could break it if edited. By running the tool without root permissions, it makes it much more difficult for a bug or an attacker to use The Twenty-Four Hour Movie to harm your computer.</p>
+						<p class="Para">If you are a programmer or a savvy computer user, and you would like to learn more about launch agents, read Apple&rsquo;s developer documentation on the topic at <a href="http://developer.apple.com/mac/library/documentation/MacOSX/Conceptual/BPSystemStartup/Articles/LaunchOnDemandDaemons.html#//apple_ref/doc/uid/TP40001762">http://developer.apple.com/mac/library/documentation/MacOSX/Conceptual/BPSystemStartup/Articles/LaunchOnDemandDaemons.html</a>. (The documentation primarily refers to daemons, but the technology can also be used for launch-and-quit tools like The Twenty-Four Hour Movie.)</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

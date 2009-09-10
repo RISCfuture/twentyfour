@@ -17,9 +17,9 @@
 }
 
 - (IBAction) openHelp:(id)sender {
-	NSString *helpBook = [[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundleHelpBookName"];
+	NSString *helpBook = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleHelpBookName"];
 	if (launchAgentSettings.enabled) [[NSHelpManager sharedHelpManager] openHelpAnchor:@"settings" inBook:helpBook]; //TODO
-	else [[NSHelpManager sharedHelpManager] openHelpAnchor:@"launch_agent_disabled" inBook:helpBook]; //TODO
+	else [[NSHelpManager sharedHelpManager] openHelpAnchor:@"setting_desktop" inBook:helpBook]; //TODO
 }
 
 - (IBAction) chooseFolder:(id)sender {

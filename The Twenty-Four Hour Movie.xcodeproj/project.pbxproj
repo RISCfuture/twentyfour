@@ -29,6 +29,7 @@
 		01826266100694750089CDFC /* DMConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 018262631006941E0089CDFC /* DMConstants.m */; };
 		01826297100697D40089CDFC /* twentyfour in CopyFiles */ = {isa = PBXBuildFile; fileRef = 01826296100697D40089CDFC /* twentyfour */; };
 		01C6A7B01044F0D600E5DBB6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 01C6A7AF1044F0D600E5DBB6 /* Localizable.strings */; };
+		01D6CBE3104F858500642DED /* 24 Hour Movie Help in Resources */ = {isa = PBXBuildFile; fileRef = 01D6CBE2104F858500642DED /* 24 Hour Movie Help */; };
 		01E338DF104CDACA00949973 /* DMDragDropBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E338DE104CDACA00949973 /* DMDragDropBox.m */; };
 		01E33923104CE6E500949973 /* DMFileDropAreaDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E33922104CE6E500949973 /* DMFileDropAreaDelegate.m */; };
 		01E8020510043441003281A6 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01E8020410043441003281A6 /* MainMenu.xib */; };
@@ -98,6 +99,7 @@
 		018262631006941E0089CDFC /* DMConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMConstants.m; sourceTree = "<group>"; };
 		01826296100697D40089CDFC /* twentyfour */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = twentyfour; path = build/Release/twentyfour; sourceTree = SOURCE_ROOT; };
 		01C6A7AD1044F0D200E5DBB6 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
+		01D6CB9C104F857F00642DED /* English */ = {isa = PBXFileReference; lastKnownFileType = folder; name = English; path = "English.lproj/24 Hour Movie Help"; sourceTree = "<group>"; };
 		01E19873100C0C6300CA94AF /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		01E338DD104CDACA00949973 /* DMDragDropBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMDragDropBox.h; sourceTree = "<group>"; };
 		01E338DE104CDACA00949973 /* DMDragDropBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMDragDropBox.m; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 				01C6A7AF1044F0D600E5DBB6 /* Localizable.strings */,
 				0182601A100544C10089CDFC /* OpenDesktopPreferencePane.scpt */,
 				01E8020410043441003281A6 /* MainMenu.xib */,
+				01D6CBE2104F858500642DED /* 24 Hour Movie Help */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				01E19873100C0C6300CA94AF /* CoreFoundation.framework */,
 				0182623610068FFC0089CDFC /* Carbon.framework */,
 				018261871005A0C20089CDFC /* Security.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
@@ -310,7 +314,6 @@
 				01E801FE1004343C003281A6 /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
-				01E19873100C0C6300CA94AF /* CoreFoundation.framework */,
 			);
 			name = "The Twenty-Four Hour Movie";
 			sourceTree = "<group>";
@@ -395,6 +398,7 @@
 				0182612110055FC00089CDFC /* OpenDesktopPreferencePane.scpt in Resources */,
 				01C6A7B01044F0D600E5DBB6 /* Localizable.strings in Resources */,
 				012FC4EF104F22F700E18D6C /* Icon.icns in Resources */,
+				01D6CBE3104F858500642DED /* 24 Hour Movie Help in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,6 +453,14 @@
 				01C6A7AD1044F0D200E5DBB6 /* English */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		01D6CBE2104F858500642DED /* 24 Hour Movie Help */ = {
+			isa = PBXVariantGroup;
+			children = (
+				01D6CB9C104F857F00642DED /* English */,
+			);
+			name = "24 Hour Movie Help";
 			sourceTree = "<group>";
 		};
 		01E8020410043441003281A6 /* MainMenu.xib */ = {
@@ -553,6 +565,7 @@
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -566,6 +579,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
