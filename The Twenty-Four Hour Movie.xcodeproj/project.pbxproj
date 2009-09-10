@@ -10,7 +10,6 @@
 		012FC4EF104F22F700E18D6C /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 012FC4EE104F22F700E18D6C /* Icon.icns */; };
 		013DDB0E104CBD1100129CAF /* DMMappingValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 013DDB0D104CBD1100129CAF /* DMMappingValueTransformer.m */; };
 		013DDB75104CC87700129CAF /* DMReversibleMappingValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 013DDB74104CC87700129CAF /* DMReversibleMappingValueTransformer.m */; };
-		01526A13100BF1E400C6190B /* ExecutableInstaller in CopyFiles */ = {isa = PBXBuildFile; fileRef = 01526A12100BF1E400C6190B /* ExecutableInstaller */; };
 		0182612110055FC00089CDFC /* OpenDesktopPreferencePane.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 0182601A100544C10089CDFC /* OpenDesktopPreferencePane.scpt */; };
 		018261881005A0C20089CDFC /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 018261871005A0C20089CDFC /* Security.framework */; };
 		018261FD10068DE30089CDFC /* DMMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 018261D910068DE30089CDFC /* DMMainWindowController.m */; };
@@ -56,7 +55,6 @@
 			dstSubfolderSpec = 6;
 			files = (
 				01826297100697D40089CDFC /* twentyfour in CopyFiles */,
-				01526A13100BF1E400C6190B /* ExecutableInstaller in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
