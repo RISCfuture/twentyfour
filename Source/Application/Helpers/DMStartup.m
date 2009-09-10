@@ -168,7 +168,7 @@
 	if (![ourExecutable isEqualToData:wildExecutable]) {
 		[[NSFileManager defaultManager] removeItemAtPath:executablePath error:&error];
 		if (error) {
-			NSLog(@"Couldn't remove the old twentyfour executable: @%", [error localizedDescription]);
+			NSLog(@"Couldn't remove the old twentyfour executable: %@", [error localizedDescription]);
 			return;
 		}
 		[self installExecutable];
