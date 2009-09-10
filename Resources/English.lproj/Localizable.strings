@@ -10,6 +10,9 @@
 /* %@ = folder blocking a file */
 "Please move the folder at %@." = "Please move the folder at %@.";
 
+/* button */
+"Quit" = "Quit";
+
 /* No comment provided by engineer. */
 "There is a file blocking a folder I need to create." = "There is a file blocking a folder I need to create.";
 
@@ -31,5 +34,3 @@
 /* %@ = path to launch agent plist */
 "Please move the folder at %@ and restart this program." = "Please move the folder at %@ and restart this program.";
 
-/* button */
-"Quit" = "Quit";
