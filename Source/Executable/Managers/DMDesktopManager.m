@@ -73,7 +73,6 @@ static NSDictionary *sharedSettings = NULL;
 	[DMUserDefaults initializeDefaults];
 	NSMutableDictionary *defaults = [[NSMutableDictionary alloc] initWithDictionary:[[NSUserDefaults standardUserDefaults] volatileDomainForName:NSRegistrationDomain]];
 	[defaults addEntriesFromDictionary:[[NSUserDefaults standardUserDefaults] persistentDomainForName:@"org.tmorgan.TwentyFourHourMovie"]];
-	NSLog(@"%@", defaults);
 	
 	NSArray *files = [self files:[defaults objectForKey:DMUserDefaultsKeyImageDirectory]];
 	if (!files) return;
