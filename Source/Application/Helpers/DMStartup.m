@@ -40,19 +40,11 @@
 #pragma mark Initialization and deallocation
 
 /*
- Initializes value transformers and user defaults.
+ Initializes value transformers.
  */
 
 + (void) initialize {
-	NSDictionary *defaults = [[NSDictionary alloc] initWithObjectsAndKeys:
-									 [NSNumber numberWithUnsignedInteger:NSImageScaleProportionallyUpOrDown], NSWorkspaceDesktopImageScalingKey,
-									 [NSNumber numberWithBool:NO], NSWorkspaceDesktopImageAllowClippingKey,
-									 [NSArchiver archivedDataWithRootObject:[NSColor blackColor]], NSWorkspaceDesktopImageFillColorKey,
-									 [NSNumber numberWithUnsignedInteger:DMScreenSettingsMainScreenOnly], DMUserDefaultsKeyDesktopScreens,
-									 NULL];
-	[[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
-	[defaults release];
-	
+	[DMUserDefaults initializeDefaults];
 	[NSValueTransformer setValueTransformer:[[[DMFileNameValueTransformer alloc] init] autorelease] forName:@"DMFileName"];
 	[NSValueTransformer setValueTransformer:[[[DMFileIconValueTransformer alloc] init] autorelease] forName:@"DMFileIcon"];
 	[NSValueTransformer setValueTransformer:[[[DMPeriodValueTransformer alloc] init] autorelease] forName:@"DMPeriod"];

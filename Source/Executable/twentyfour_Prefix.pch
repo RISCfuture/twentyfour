@@ -7,4 +7,5 @@
 
 #import "DMConstants.h"
 
+#import "DMUserDefaults.h"
 #import "DMDesktopManager.h"

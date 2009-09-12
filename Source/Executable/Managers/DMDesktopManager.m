@@ -7,27 +7,13 @@ static NSDictionary *sharedSettings = NULL;
 
 @interface DMDesktopManager (Private)
 
-#pragma mark Working with the property list file
-
-/*
- The path to the settings plist file.
- */
-
-- (NSString *) settingsPath;
-
-/*
- Returns a dictionary of the settings in the settings plist file.
- */
-
-- (NSDictionary *) settings;
-
 #pragma mark Working with the image sequence
 
 /*
  Returns an array of matching desktop images in the image folder.
  */
 
-- (NSArray *) files;
+- (NSArray *) files:(NSString *)directoryPath;
 
 /*
  Returns the offset of the image to use, given a total number of images, based
@@ -84,7 +70,12 @@ static NSDictionary *sharedSettings = NULL;
 #pragma mark Setting the desktop background
 
 - (void) setBackground {
-	NSArray *files = [self files];
+	[DMUserDefaults initializeDefaults];
+	NSMutableDictionary *defaults = [[NSMutableDictionary alloc] initWithDictionary:[[NSUserDefaults standardUserDefaults] volatileDomainForName:NSRegistrationDomain]];
+	[defaults addEntriesFromDictionary:[[NSUserDefaults standardUserDefaults] persistentDomainForName:@"org.tmorgan.TwentyFourHourMovie"]];
+	NSLog(@"%@", defaults);
+	
+	NSArray *files = [self files:[defaults objectForKey:DMUserDefaultsKeyImageDirectory]];
 	if (!files) return;
 	NSUInteger imageNumber = [self imageNumber:[files count]];
 	NSString *filename = [files objectAtIndex:imageNumber];
@@ -93,16 +84,18 @@ static NSDictionary *sharedSettings = NULL;
 	NSURL *URL = [[NSURL alloc] initFileURLWithPath:filename];
 	NSError *error = NULL;
 	
-	DMScreenSettings screenSetting = [(NSNumber *)[[self settings] objectForKey:DMUserDefaultsKeyDesktopScreens] unsignedIntegerValue];
+	DMScreenSettings screenSetting = [(NSNumber *)[defaults objectForKey:DMUserDefaultsKeyDesktopScreens] unsignedIntegerValue];
 	if (screenSetting == DMScreenSettingsAllScreens) {
 		for (NSScreen *screen in [NSScreen screens])
-			[[NSWorkspace sharedWorkspace] setDesktopImageURL:URL forScreen:screen options:[self settings] error:&error];
+			[[NSWorkspace sharedWorkspace] setDesktopImageURL:URL forScreen:screen options:defaults error:&error];
 	}
 	else if (screenSetting = DMScreenSettingsMainScreenOnly)
-		[[NSWorkspace sharedWorkspace] setDesktopImageURL:URL forScreen:[NSScreen mainScreen] options:[self settings] error:&error];
+		[[NSWorkspace sharedWorkspace] setDesktopImageURL:URL forScreen:[NSScreen mainScreen] options:defaults error:&error];
 	[URL release];
 	
 	if (error) NSLog(@"Error while changing desktop: %@", [error localizedDescription]);
+	
+	[defaults release];
 }
 
 @end
@@ -111,24 +104,9 @@ static NSDictionary *sharedSettings = NULL;
 
 @implementation DMDesktopManager (Private)
 
-#pragma mark Working with the property list file
-
-- (NSString *) settingsPath {
-	return [@"~/Library/Preferences/org.tmorgan.TwentyFourHourMovie.plist" stringByExpandingTildeInPath];
-}
-
-- (NSDictionary *) settings {
-	if (!sharedSettings) {
-		sharedSettings = [NSDictionary dictionaryWithContentsOfFile:[self settingsPath]];
-		if (!sharedSettings) sharedSettings = [NSDictionary dictionary];
-	}
-	return sharedSettings;
-}
-
 #pragma mark Working with the image sequence
 
-- (NSArray *) files {
-	NSString *directoryPath = [[self settings] objectForKey:DMUserDefaultsKeyImageDirectory];
+- (NSArray *) files:(NSString *)directoryPath {
 	if (!directoryPath) {
 		NSLog(@"No image path specified in user defaults; not changing desktop.");
 		exit(0);

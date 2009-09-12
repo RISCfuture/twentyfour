@@ -4,6 +4,7 @@
 #import <Security/Security.h>
 
 #import "DMConstants.h"
+#import "DMUserDefaults.h"
 
 #import "DMFileNameValueTransformer.h"
 #import "DMFileIconValueTransformer.h"

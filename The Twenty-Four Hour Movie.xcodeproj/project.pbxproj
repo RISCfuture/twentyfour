@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0115270F105B884100D18F57 /* DMUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 0115270E105B884100D18F57 /* DMUserDefaults.m */; };
+		01152710105B889500D18F57 /* DMUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 0115270E105B884100D18F57 /* DMUserDefaults.m */; };
 		012FC4EF104F22F700E18D6C /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 012FC4EE104F22F700E18D6C /* Icon.icns */; };
 		013DDB0E104CBD1100129CAF /* DMMappingValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 013DDB0D104CBD1100129CAF /* DMMappingValueTransformer.m */; };
 		013DDB75104CC87700129CAF /* DMReversibleMappingValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 013DDB74104CC87700129CAF /* DMReversibleMappingValueTransformer.m */; };
@@ -61,12 +63,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0115270D105B884100D18F57 /* DMUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMUserDefaults.h; sourceTree = "<group>"; };
+		0115270E105B884100D18F57 /* DMUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMUserDefaults.m; sourceTree = "<group>"; };
 		012FC4EE104F22F700E18D6C /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		013DDB0C104CBD1100129CAF /* DMMappingValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMMappingValueTransformer.h; sourceTree = "<group>"; };
 		013DDB0D104CBD1100129CAF /* DMMappingValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMMappingValueTransformer.m; sourceTree = "<group>"; };
 		013DDB73104CC87700129CAF /* DMReversibleMappingValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMReversibleMappingValueTransformer.h; sourceTree = "<group>"; };
 		013DDB74104CC87700129CAF /* DMReversibleMappingValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMReversibleMappingValueTransformer.m; sourceTree = "<group>"; };
-		01526A12100BF1E400C6190B /* ExecutableInstaller */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = ExecutableInstaller; path = build/Release/ExecutableInstaller; sourceTree = "<group>"; };
 		0182601A100544C10089CDFC /* OpenDesktopPreferencePane.scpt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.scpt; path = OpenDesktopPreferencePane.scpt; sourceTree = "<group>"; };
 		018261871005A0C20089CDFC /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = /System/Library/Frameworks/Security.framework; sourceTree = "<absolute>"; };
 		018261D810068DE30089CDFC /* DMMainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMMainWindowController.h; sourceTree = "<group>"; };
@@ -171,6 +174,8 @@
 			children = (
 				018261DB10068DE30089CDFC /* DMStartup.h */,
 				018261DC10068DE30089CDFC /* DMStartup.m */,
+				0115270D105B884100D18F57 /* DMUserDefaults.h */,
+				0115270E105B884100D18F57 /* DMUserDefaults.m */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -307,7 +312,6 @@
 		29B97314FDCFA39411CA2CEA /* The Twenty-Four Hour Movie */ = {
 			isa = PBXGroup;
 			children = (
-				01526A12100BF1E400C6190B /* ExecutableInstaller */,
 				018261D510068DE30089CDFC /* Source */,
 				01E801FE1004343C003281A6 /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
@@ -408,6 +412,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01826266100694750089CDFC /* DMConstants.m in Sources */,
+				0115270F105B884100D18F57 /* DMUserDefaults.m in Sources */,
 				01826240100690160089CDFC /* DMDesktopManager.m in Sources */,
 				01826241100690160089CDFC /* twentyfour.m in Sources */,
 			);
@@ -418,6 +423,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				018262641006941E0089CDFC /* DMConstants.m in Sources */,
+				01152710105B889500D18F57 /* DMUserDefaults.m in Sources */,
 				018261FD10068DE30089CDFC /* DMMainWindowController.m in Sources */,
 				018261FE10068DE30089CDFC /* DMStartup.m in Sources */,
 				018261FF10068DE30089CDFC /* main.m in Sources */,
