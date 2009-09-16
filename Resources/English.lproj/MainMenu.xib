@@ -10,7 +10,9 @@
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin</string>
 			<string key="NS.object.0">732</string>
 		</object>
-		<array class="NSMutableArray" key="IBDocument.EditedObjectIDs"/>
+		<array class="NSMutableArray" key="IBDocument.EditedObjectIDs">
+			<integer value="372"/>
+		</array>
 		<array key="IBDocument.PluginDependencies">
 			<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 		</array>
@@ -1071,7 +1073,7 @@
 				<string key="NSWindowContentMaxSize">{424, 424}</string>
 				<string key="NSWindowContentMinSize">{424, 424}</string>
 				<object class="NSView" key="NSWindowView" id="439893737">
-					<nil key="NSNextResponder"/>
+					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
 					<array class="NSMutableArray" key="NSSubviews">
 						<object class="NSButton" id="964236439">
@@ -1405,7 +1407,7 @@
 												<object class="NSTextFieldCell" key="NSCell" id="999629434">
 													<int key="NSCellFlags">67239424</int>
 													<int key="NSCellFlags2">205651968</int>
-													<string key="NSContents">In order to prevent your computer from slowing down, the desktop picture will not be changed more often than once every five minutes. This will cause some of the images in your sequence to be skipped.</string>
+													<string key="NSContents">In order to prevent your computer from slowing down, the desktop picture will not be changed more often than once every two minutes. This will cause some of the images in your sequence to be skipped.</string>
 													<reference key="NSSupport" ref="26"/>
 													<reference key="NSControlView" ref="200999111"/>
 													<reference key="NSBackgroundColor" ref="655246028"/>
@@ -1791,6 +1793,7 @@
 						</object>
 					</array>
 					<string key="NSFrameSize">{424, 424}</string>
+					<reference key="NSSuperview"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
 				<string key="NSMinSize">{424, 446}</string>

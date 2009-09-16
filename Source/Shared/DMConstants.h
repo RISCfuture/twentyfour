@@ -1,6 +1,6 @@
 #pragma mark Preprocessor directives
 
-#define DMLaunchDaemonInterval 5*60
+#define DMLaunchDaemonInterval 2*60
 
 #define MINUTES 60
 #define HOURS 60*MINUTES
