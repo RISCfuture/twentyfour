@@ -17,10 +17,10 @@ static NSDictionary *sharedSettings = NULL;
 
 /*
  Returns the offset of the image to use, given a total number of images, based
- on the time of day.
+ on the progress through a given sequence length.
  */
 
-- (NSUInteger) imageNumber:(NSUInteger)imageCount;
+- (NSUInteger) imageNumber:(NSUInteger)imageCount forSequenceLength:(DMSequenceLength)sequenceLength;
 
 @end
 
@@ -73,10 +73,18 @@ static NSDictionary *sharedSettings = NULL;
 	[DMUserDefaults initializeDefaults];
 	NSMutableDictionary *defaults = [[NSMutableDictionary alloc] initWithDictionary:[[NSUserDefaults standardUserDefaults] volatileDomainForName:NSRegistrationDomain]];
 	[defaults addEntriesFromDictionary:[[NSUserDefaults standardUserDefaults] persistentDomainForName:@"org.tmorgan.TwentyFourHourMovie"]];
+	NSArray *keys = [[NSArray alloc] initWithObjects:NSWorkspaceDesktopImageScalingKey, NSWorkspaceDesktopImageAllowClippingKey, NSWorkspaceDesktopImageFillColorKey, NULL];
+	NSMutableDictionary *desktopOptions = [[NSMutableDictionary alloc] initWithDictionary:[defaults dictionaryWithValuesForKeys:keys]];
+	[keys release];
+	NSData *colorData = [desktopOptions objectForKey:NSWorkspaceDesktopImageFillColorKey];
+	if (colorData) [desktopOptions setObject:[NSUnarchiver unarchiveObjectWithData:colorData] forKey:NSWorkspaceDesktopImageFillColorKey];
 	
 	NSArray *files = [self files:[defaults objectForKey:DMUserDefaultsKeyImageDirectory]];
 	if (!files) return;
-	NSUInteger imageNumber = [self imageNumber:[files count]];
+	
+	DMSequenceLength sequenceLength = [(NSNumber *)[defaults objectForKey:DMUserDefaultsKeyPeriod] integerValue];
+	
+	NSUInteger imageNumber = [self imageNumber:[files count] forSequenceLength:sequenceLength];
 	NSString *filename = [files objectAtIndex:imageNumber];
 	if (!filename) return;
 	
@@ -86,10 +94,10 @@ static NSDictionary *sharedSettings = NULL;
 	DMScreenSettings screenSetting = [(NSNumber *)[defaults objectForKey:DMUserDefaultsKeyDesktopScreens] unsignedIntegerValue];
 	if (screenSetting == DMScreenSettingsAllScreens) {
 		for (NSScreen *screen in [NSScreen screens])
-			[[NSWorkspace sharedWorkspace] setDesktopImageURL:URL forScreen:screen options:defaults error:&error];
+			[[NSWorkspace sharedWorkspace] setDesktopImageURL:URL forScreen:screen options:desktopOptions error:&error];
 	}
-	else if (screenSetting = DMScreenSettingsMainScreenOnly)
-		[[NSWorkspace sharedWorkspace] setDesktopImageURL:URL forScreen:[NSScreen mainScreen] options:defaults error:&error];
+	else if (screenSetting == DMScreenSettingsMainScreenOnly)
+		[[NSWorkspace sharedWorkspace] setDesktopImageURL:URL forScreen:[NSScreen mainScreen] options:desktopOptions error:&error];
 	[URL release];
 	
 	if (error) NSLog(@"Error while changing desktop: %@", [error localizedDescription]);
@@ -125,14 +133,49 @@ static NSDictionary *sharedSettings = NULL;
 	return [matchingFiles autorelease];
 }
 
-- (NSUInteger) imageNumber:(NSUInteger)imageCount {
-	NSCalendarDate *now = [[NSCalendarDate alloc] init];
-	NSCalendarDate *today = [[NSCalendarDate alloc] initWithYear:[now yearOfCommonEra] month:[now monthOfYear] day:[now dayOfMonth] hour:0 minute:0 second:0 timeZone:[now timeZone]];
-	NSUInteger secondsToday = [now timeIntervalSinceDate:today];
-	[today release];
-	[now release];
+- (NSUInteger) imageNumber:(NSUInteger)imageCount forSequenceLength:(DMSequenceLength)sequenceLength {
+	NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+	NSDateComponents *current = [calendar components:(NSYearCalendarUnit|NSMonthCalendarUnit|NSWeekCalendarUnit|NSDayCalendarUnit|NSHourCalendarUnit) fromDate:[NSDate date]];
+	NSDateComponents *start = [[NSDateComponents alloc] init];
+	[start setEra:[current era]];
+	[start setYear:[current year]];
+	[start setMinute:0];
+	[start setSecond:0];
+	switch (sequenceLength) {
+		case DMSequenceLengthHour:
+			[start setMonth:[current month]];
+			[start setDay:[current day]];
+			[start setHour:[current hour]];
+			break;
+		case DMSequenceLengthWeek:
+			[start setWeekday:1];
+			[start setWeekdayOrdinal:[current weekdayOrdinal]];
+			[start setHour:0];
+			break;
+		case DMSequenceLengthMonth:
+			[start setMonth:[current month]];
+			[start setDay:1];
+			[start setHour:0];
+			break;
+		case DMSequenceLengthYear:
+			[start setMonth:0];
+			[start setDay:0];
+			[start setHour:0];
+			break;
+		default: // DMSequenceLengthDay
+			[start setMonth:[current month]];
+			[start setDay:[current day]];
+			[start setHour:0];
+			break;
+	}
 	
-	return (NSUInteger)((secondsToday/SECONDS_PER_DAY)*imageCount);
+	NSTimeInterval secondsSoFar = [[NSDate date] timeIntervalSinceDate:[calendar dateFromComponents:start]];
+	NSTimeInterval totalSeconds = DMTimeIntervalForSequenceLength(sequenceLength);
+	
+	[start release];
+	[calendar release];
+	
+	return (NSUInteger)((secondsSoFar/totalSeconds)*imageCount);
 }
 
 @end

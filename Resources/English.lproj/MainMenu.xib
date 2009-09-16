@@ -2,9 +2,9 @@
 <archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1060</int>
-		<string key="IBDocument.SystemVersion">10A432</string>
+		<string key="IBDocument.SystemVersion">10B504</string>
 		<string key="IBDocument.InterfaceBuilderVersion">732</string>
-		<string key="IBDocument.AppKitVersion">1038</string>
+		<string key="IBDocument.AppKitVersion">1038.2</string>
 		<string key="IBDocument.HIToolboxVersion">437.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -1405,7 +1405,7 @@
 												<object class="NSTextFieldCell" key="NSCell" id="999629434">
 													<int key="NSCellFlags">67239424</int>
 													<int key="NSCellFlags2">205651968</int>
-													<string key="NSContents">In order to prevent your computer from slowing down, the desktop picture will not be changed more often than once every thirty seconds. This will cause some of the images in your sequence to be skipped.</string>
+													<string key="NSContents">In order to prevent your computer from slowing down, the desktop picture will not be changed more often than once every five minutes. This will cause some of the images in your sequence to be skipped.</string>
 													<reference key="NSSupport" ref="26"/>
 													<reference key="NSControlView" ref="200999111"/>
 													<reference key="NSBackgroundColor" ref="655246028"/>
@@ -2439,46 +2439,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">hidden: period</string>
-						<reference key="source" ref="200999111"/>
-						<reference key="destination" ref="363154078"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="200999111"/>
-							<reference key="NSDestination" ref="363154078"/>
-							<string key="NSLabel">hidden: period</string>
-							<string key="NSBinding">hidden</string>
-							<string key="NSKeyPath">period</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSValueTransformerName</string>
-								<string key="NS.object.0">DMPeriodTooSmall</string>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">570</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">hidden: period</string>
-						<reference key="source" ref="596966771"/>
-						<reference key="destination" ref="363154078"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="596966771"/>
-							<reference key="NSDestination" ref="363154078"/>
-							<string key="NSLabel">hidden: period</string>
-							<string key="NSBinding">hidden</string>
-							<string key="NSKeyPath">period</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSValueTransformerName</string>
-								<string key="NS.object.0">DMPeriodTooSmall</string>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">572</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: values.DMImageDirectory</string>
 						<reference key="source" ref="302604139"/>
 						<reference key="destination" ref="941083170"/>
@@ -2496,26 +2456,6 @@
 						</object>
 					</object>
 					<int key="connectionID">582</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">selectedIndex: period</string>
-						<reference key="source" ref="846509531"/>
-						<reference key="destination" ref="363154078"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="846509531"/>
-							<reference key="NSDestination" ref="363154078"/>
-							<string key="NSLabel">selectedIndex: period</string>
-							<string key="NSBinding">selectedIndex</string>
-							<string key="NSKeyPath">period</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSValueTransformerName</string>
-								<string key="NS.object.0">DMPeriod</string>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">594</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
@@ -2604,6 +2544,62 @@
 						<reference key="destination" ref="752051043"/>
 					</object>
 					<int key="connectionID">649</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">hidden: values.DMPeriod</string>
+						<reference key="source" ref="200999111"/>
+						<reference key="destination" ref="941083170"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="200999111"/>
+							<reference key="NSDestination" ref="941083170"/>
+							<string key="NSLabel">hidden: values.DMPeriod</string>
+							<string key="NSBinding">hidden</string>
+							<string key="NSKeyPath">values.DMPeriod</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">DMPeriodTooSmall</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">656</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">hidden: values.DMPeriod</string>
+						<reference key="source" ref="596966771"/>
+						<reference key="destination" ref="941083170"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="596966771"/>
+							<reference key="NSDestination" ref="941083170"/>
+							<string key="NSLabel">hidden: values.DMPeriod</string>
+							<string key="NSBinding">hidden</string>
+							<string key="NSKeyPath">values.DMPeriod</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">DMPeriodTooSmall</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">659</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">selectedIndex: values.DMPeriod</string>
+						<reference key="source" ref="846509531"/>
+						<reference key="destination" ref="941083170"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="846509531"/>
+							<reference key="NSDestination" ref="941083170"/>
+							<string key="NSLabel">selectedIndex: values.DMPeriod</string>
+							<string key="NSBinding">selectedIndex</string>
+							<string key="NSKeyPath">values.DMPeriod</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">660</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -4232,7 +4228,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">649</int>
+			<int key="maxID">660</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">

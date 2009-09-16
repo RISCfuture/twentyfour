@@ -4,6 +4,7 @@
 
 NSString *DMUserDefaultsKeyImageDirectory = @"DMImageDirectory";
 NSString *DMUserDefaultsKeyDesktopScreens = @"DMDesktopScreens";
+NSString *DMUserDefaultsKeyPeriod = @"DMPeriod";
 
 #pragma mark Executable
 

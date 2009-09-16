@@ -21,16 +21,6 @@
 
 @property (assign) BOOL enabled;
 
-/*!
- @property period
- @abstract The number of seconds between relaunches of the desktop changing
- tool.
- @discussion This is a dynamic property whose value is taken from the property
- list file.
- */
-
-@property (retain) NSNumber *period;
-
 #pragma mark Working with the launch agent
 
 /*!

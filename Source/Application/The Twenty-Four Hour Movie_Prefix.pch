@@ -8,8 +8,7 @@
 
 #import "DMFileNameValueTransformer.h"
 #import "DMFileIconValueTransformer.h"
-#import "DMPeriodValueTransformer.h"
-#import "DMPeriodTooSmallValueTransformer.h"
+#import "DMPeriodNotTooSmallValueTransformer.h"
 #import "DMMappingValueTransformer.h"
 #import "DMReversibleMappingValueTransformer.h"
 

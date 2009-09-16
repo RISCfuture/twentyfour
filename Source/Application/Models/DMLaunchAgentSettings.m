@@ -46,7 +46,6 @@
 #pragma mark Properties
 
 @dynamic enabled;
-@dynamic period;
 
 #pragma mark Initializing and deallocating
 
@@ -89,7 +88,6 @@
 + (BOOL) automaticallyNotifiesObserversForKey:(NSString *)key {
 	BOOL automatic = NO;
 	if ([key isEqualToString:@"enabled"]) automatic = NO;
-	if ([key isEqualToString:@"period"]) automatic = NO;
 	else automatic = [super automaticallyNotifiesObserversForKey:key];
 	return automatic;
 }
@@ -116,35 +114,6 @@
 	
 	// start or stop the launch agent depending on the new value
 	[self toggleLaunchAgent:newValue];
-}
-
-- (NSNumber *) period {
-	return [[self plistSettings] objectForKey:@"StartInterval"];
-}
-
-- (void) setPeriod:(NSNumber *)newValue {
-	[self willChangeValueForKey:@"period"];
-	
-	// check if its below the threshold
-	if ([newValue unsignedIntegerValue] < DMPeriodThreshold) newValue = [NSNumber numberWithUnsignedInteger:DMPeriodThreshold];
-	
-	// write the new value out to the plist file
-	[[NSProcessInfo processInfo] disableSuddenTermination];
-	@synchronized (plistSettings) {
-		NSMutableDictionary *newSettings = [[NSMutableDictionary alloc] initWithDictionary:[self plistSettings]];
-		[newSettings setObject:newValue forKey:@"StartInterval"];
-		[self writePlistToFile:newSettings];
-		[newSettings release];
-		[self reloadSettings];
-	}
-	[self didChangeValueForKey:@"period"];
-	[[NSProcessInfo processInfo] enableSuddenTermination];
-	
-	// restart the launch agent if it is running
-	if (self.enabled) {
-		[self toggleLaunchAgent:NO];
-		[self toggleLaunchAgent:YES];
-	}
 }
 
 #pragma mark Working with the launch agent
@@ -179,12 +148,10 @@
 //		[alert release];
 		
 		[self willChangeValueForKey:@"enabled"];
-		[self willChangeValueForKey:@"period"];
 		@synchronized (plistSettings) {
 			plistSettings = [NSDictionary dictionaryWithContentsOfFile:[self plistPath]];
 		}
 		[self didChangeValueForKey:@"enabled"];
-		[self didChangeValueForKey:@"period"];
 	}
 }
 
@@ -221,7 +188,7 @@
 							  @"org.tmorgan.TwentyFourHourMovie", @"Label",
 							  programArguments, @"ProgramArguments",
 							  [NSNumber numberWithBool:YES], @"RunAtLoad",
-							  [NSNumber numberWithUnsignedInteger:60], @"StartInterval",
+							  [NSNumber numberWithUnsignedInteger:DMLaunchDaemonInterval], @"StartInterval",
 							  [NSNumber numberWithBool:YES], @"Disabled",
 							  NULL];
 	[programArguments release];

@@ -10,6 +10,7 @@
 							  [NSNumber numberWithBool:NO], NSWorkspaceDesktopImageAllowClippingKey,
 							  [NSArchiver archivedDataWithRootObject:[NSColor blackColor]], NSWorkspaceDesktopImageFillColorKey,
 							  [NSNumber numberWithUnsignedInteger:DMScreenSettingsMainScreenOnly], DMUserDefaultsKeyDesktopScreens,
+							  [NSNumber numberWithInteger:DMSequenceLengthDay], DMUserDefaultsKeyPeriod,
 							  NULL];
 	[[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
 	[defaults release];

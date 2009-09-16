@@ -21,8 +21,7 @@
 		0182620210068DE30089CDFC /* DMLaunchAgentSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 018261E510068DE30089CDFC /* DMLaunchAgentSettings.m */; };
 		0182620410068DE30089CDFC /* DMFileIconValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 018261EC10068DE30089CDFC /* DMFileIconValueTransformer.m */; };
 		0182620510068DE30089CDFC /* DMFileNameValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 018261EE10068DE30089CDFC /* DMFileNameValueTransformer.m */; };
-		0182620610068DE30089CDFC /* DMPeriodTooSmallValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 018261F010068DE30089CDFC /* DMPeriodTooSmallValueTransformer.m */; };
-		0182620710068DE30089CDFC /* DMPeriodValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 018261F210068DE30089CDFC /* DMPeriodValueTransformer.m */; };
+		0182620610068DE30089CDFC /* DMPeriodNotTooSmallValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 018261F010068DE30089CDFC /* DMPeriodNotTooSmallValueTransformer.m */; };
 		0182623B100690020089CDFC /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0182623610068FFC0089CDFC /* Carbon.framework */; };
 		01826240100690160089CDFC /* DMDesktopManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 018261F610068DE30089CDFC /* DMDesktopManager.m */; };
 		01826241100690160089CDFC /* twentyfour.m in Sources */ = {isa = PBXBuildFile; fileRef = 018261F710068DE30089CDFC /* twentyfour.m */; };
@@ -86,10 +85,8 @@
 		018261EC10068DE30089CDFC /* DMFileIconValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMFileIconValueTransformer.m; sourceTree = "<group>"; };
 		018261ED10068DE30089CDFC /* DMFileNameValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMFileNameValueTransformer.h; sourceTree = "<group>"; };
 		018261EE10068DE30089CDFC /* DMFileNameValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMFileNameValueTransformer.m; sourceTree = "<group>"; };
-		018261EF10068DE30089CDFC /* DMPeriodTooSmallValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMPeriodTooSmallValueTransformer.h; sourceTree = "<group>"; };
-		018261F010068DE30089CDFC /* DMPeriodTooSmallValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMPeriodTooSmallValueTransformer.m; sourceTree = "<group>"; };
-		018261F110068DE30089CDFC /* DMPeriodValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMPeriodValueTransformer.h; sourceTree = "<group>"; };
-		018261F210068DE30089CDFC /* DMPeriodValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMPeriodValueTransformer.m; sourceTree = "<group>"; };
+		018261EF10068DE30089CDFC /* DMPeriodNotTooSmallValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMPeriodNotTooSmallValueTransformer.h; sourceTree = "<group>"; };
+		018261F010068DE30089CDFC /* DMPeriodNotTooSmallValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMPeriodNotTooSmallValueTransformer.m; sourceTree = "<group>"; };
 		018261F510068DE30089CDFC /* DMDesktopManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMDesktopManager.h; sourceTree = "<group>"; };
 		018261F610068DE30089CDFC /* DMDesktopManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMDesktopManager.m; sourceTree = "<group>"; };
 		018261F710068DE30089CDFC /* twentyfour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = twentyfour.m; sourceTree = "<group>"; };
@@ -218,10 +215,8 @@
 				018261EE10068DE30089CDFC /* DMFileNameValueTransformer.m */,
 				013DDB0C104CBD1100129CAF /* DMMappingValueTransformer.h */,
 				013DDB0D104CBD1100129CAF /* DMMappingValueTransformer.m */,
-				018261EF10068DE30089CDFC /* DMPeriodTooSmallValueTransformer.h */,
-				018261F010068DE30089CDFC /* DMPeriodTooSmallValueTransformer.m */,
-				018261F110068DE30089CDFC /* DMPeriodValueTransformer.h */,
-				018261F210068DE30089CDFC /* DMPeriodValueTransformer.m */,
+				018261EF10068DE30089CDFC /* DMPeriodNotTooSmallValueTransformer.h */,
+				018261F010068DE30089CDFC /* DMPeriodNotTooSmallValueTransformer.m */,
 				013DDB73104CC87700129CAF /* DMReversibleMappingValueTransformer.h */,
 				013DDB74104CC87700129CAF /* DMReversibleMappingValueTransformer.m */,
 			);
@@ -431,8 +426,7 @@
 				0182620210068DE30089CDFC /* DMLaunchAgentSettings.m in Sources */,
 				0182620410068DE30089CDFC /* DMFileIconValueTransformer.m in Sources */,
 				0182620510068DE30089CDFC /* DMFileNameValueTransformer.m in Sources */,
-				0182620610068DE30089CDFC /* DMPeriodTooSmallValueTransformer.m in Sources */,
-				0182620710068DE30089CDFC /* DMPeriodValueTransformer.m in Sources */,
+				0182620610068DE30089CDFC /* DMPeriodNotTooSmallValueTransformer.m in Sources */,
 				013DDB0E104CBD1100129CAF /* DMMappingValueTransformer.m in Sources */,
 				013DDB75104CC87700129CAF /* DMReversibleMappingValueTransformer.m in Sources */,
 				01E338DF104CDACA00949973 /* DMDragDropBox.m in Sources */,

@@ -47,8 +47,7 @@
 	[DMUserDefaults initializeDefaults];
 	[NSValueTransformer setValueTransformer:[[[DMFileNameValueTransformer alloc] init] autorelease] forName:@"DMFileName"];
 	[NSValueTransformer setValueTransformer:[[[DMFileIconValueTransformer alloc] init] autorelease] forName:@"DMFileIcon"];
-	[NSValueTransformer setValueTransformer:[[[DMPeriodValueTransformer alloc] init] autorelease] forName:@"DMPeriod"];
-	[NSValueTransformer setValueTransformer:[[[DMPeriodTooSmallValueTransformer alloc] init] autorelease] forName:@"DMPeriodTooSmall"];
+	[NSValueTransformer setValueTransformer:[[[DMPeriodNotTooSmallValueTransformer alloc] init] autorelease] forName:@"DMPeriodTooSmall"];
 	NSDictionary *imageScalingPopupMappings = [[NSDictionary alloc] initWithObjectsAndKeys:
 											   [NSNumber numberWithUnsignedInteger:0], [NSNumber numberWithUnsignedInteger:NSImageScaleNone],
 											   [NSNumber numberWithUnsignedInteger:1], [NSNumber numberWithUnsignedInteger:NSImageScaleProportionallyUpOrDown],
