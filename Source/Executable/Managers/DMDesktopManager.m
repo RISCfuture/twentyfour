@@ -135,45 +135,50 @@ static NSDictionary *sharedSettings = NULL;
 
 - (NSUInteger) imageNumber:(NSUInteger)imageCount forSequenceLength:(DMSequenceLength)sequenceLength {
 	NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-	NSDateComponents *current = [calendar components:(NSYearCalendarUnit|NSMonthCalendarUnit|NSWeekCalendarUnit|NSDayCalendarUnit|NSHourCalendarUnit) fromDate:[NSDate date]];
-	NSDateComponents *start = [[NSDateComponents alloc] init];
-	[start setEra:[current era]];
-	[start setYear:[current year]];
-	[start setMinute:0];
-	[start setSecond:0];
+	NSDateComponents *start = NULL;
 	switch (sequenceLength) {
 		case DMSequenceLengthHour:
-			[start setMonth:[current month]];
-			[start setDay:[current day]];
-			[start setHour:[current hour]];
+			start = [calendar components:(NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit|NSHourCalendarUnit) fromDate:[NSDate date]];
 			break;
 		case DMSequenceLengthWeek:
-			[start setWeekday:1];
-			[start setWeekdayOrdinal:[current weekdayOrdinal]];
-			[start setHour:0];
+			start = [calendar components:(NSYearCalendarUnit|NSWeekCalendarUnit) fromDate:[NSDate date]];
 			break;
 		case DMSequenceLengthMonth:
-			[start setMonth:[current month]];
-			[start setDay:1];
-			[start setHour:0];
+			start = [calendar components:(NSYearCalendarUnit|NSMonthCalendarUnit) fromDate:[NSDate date]];
 			break;
 		case DMSequenceLengthYear:
-			[start setMonth:0];
-			[start setDay:0];
-			[start setHour:0];
+			start = [calendar components:(NSYearCalendarUnit) fromDate:[NSDate date]];
 			break;
 		default: // DMSequenceLengthDay
-			[start setMonth:[current month]];
-			[start setDay:[current day]];
-			[start setHour:0];
+			start = [calendar components:(NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit) fromDate:[NSDate date]];
+			break;
+	}
+	NSDateComponents *end = [[NSDateComponents alloc] init];
+	switch (sequenceLength) {
+		case DMSequenceLengthHour:
+			end.hour = 1;
+			break;
+		case DMSequenceLengthWeek:
+			end.week = 1;
+			break;
+		case DMSequenceLengthMonth:
+			end.month = 1;
+			break;
+		case DMSequenceLengthYear:
+			end.year = 1;
+			break;
+		default: // DMSequenceLengthDay
+			end.day = 1;
 			break;
 	}
 	
-	NSTimeInterval secondsSoFar = [[NSDate date] timeIntervalSinceDate:[calendar dateFromComponents:start]];
-	NSTimeInterval totalSeconds = DMTimeIntervalForSequenceLength(sequenceLength);
-	
-	[start release];
+	NSDate *startTime = [calendar dateFromComponents:start];
+	NSDate *endTime = [calendar dateByAddingComponents:end toDate:startTime options:NULL];
+	[end release];
 	[calendar release];
+	
+	NSTimeInterval secondsSoFar = [[NSDate date] timeIntervalSinceDate:startTime];
+	NSTimeInterval totalSeconds = [endTime timeIntervalSinceDate:startTime];
 	
 	return (NSUInteger)((secondsSoFar/totalSeconds)*imageCount);
 }
