@@ -52,6 +52,8 @@
 /*
  - Registers this class as an NSTask completion observer.
  - Writes out a default LaunchAgent plist if none has been written.
+ - Registers this class as a defaults observer, so that the desktop can be
+   updated immedately if the settings change.
  */
 
 - (void) awakeFromNib {
@@ -77,6 +79,10 @@
 		// otherwise we have our file; do nothing
 	}
 	else [self writePlistToFile:[self defaults]]; // create the plist file
+	
+	[[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:DMUserDefaultsKeyDesktopScreens options:NSKeyValueObservingOptionNew context:NULL];
+	[[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:DMUserDefaultsKeyImageDirectory options:NSKeyValueObservingOptionNew context:NULL];
+	[[NSUserDefaults standardUserDefaults] addObserver:self forKeyPath:DMUserDefaultsKeyPeriod options:NSKeyValueObservingOptionNew context:NULL];
 }
 
 #pragma mark Dynamic properties
@@ -154,6 +160,20 @@
 		[self didChangeValueForKey:@"enabled"];
 	}
 }
+
+#pragma mark KVO
+
+- (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+	NSArray *arguments = [[NSArray alloc] init];
+	NSTask *task = [[NSTask alloc] init];
+	[task setLaunchPath:[[NSBundle mainBundle] pathForAuxiliaryExecutable:@"twentyfour"]];
+	[task setArguments:arguments];
+	[[NSUserDefaults standardUserDefaults] synchronize];
+	[task launch];
+	[arguments release];
+	[task release];
+}
+
 
 @end
 

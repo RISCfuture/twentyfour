@@ -45,6 +45,7 @@
 
 + (void) initialize {
 	[DMUserDefaults initializeDefaults];
+	
 	[NSValueTransformer setValueTransformer:[[[DMFileNameValueTransformer alloc] init] autorelease] forName:@"DMFileName"];
 	[NSValueTransformer setValueTransformer:[[[DMFileIconValueTransformer alloc] init] autorelease] forName:@"DMFileIcon"];
 	[NSValueTransformer setValueTransformer:[[[DMPeriodNotTooSmallValueTransformer alloc] init] autorelease] forName:@"DMPeriodTooSmall"];

@@ -3,6 +3,8 @@
  @abstract A class that supports reading from and writing to the Launch Agent
  property list file stored in ~/Library/LaunchAgents. Implements KVO to support
  Cocoa Bindings.
+ @discussion This class also observes user defaults changes and restarts the
+ launch agent to make the change appear immediate.
  */
 
 @interface DMLaunchAgentSettings : NSObject {
