@@ -56,7 +56,9 @@
 
 - (CGFloat) launchIntervalForSequenceLength:(NSTimeInterval)sequenceLength {
 	if (sequenceLength == 0) return 0.0;
-	else return sequenceLength/((CGFloat)[[DMSequenceManager sequenceManager] imageCount]);
+	NSUInteger imageCount = [[DMSequenceManager sequenceManager] imageCount];
+	if (imageCount == 0) return 0.0;
+	else return sequenceLength/((CGFloat)imageCount);
 }
 
 @end

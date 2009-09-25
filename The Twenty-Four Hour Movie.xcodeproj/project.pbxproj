@@ -17,7 +17,6 @@
 		018261FD10068DE30089CDFC /* DMMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 018261D910068DE30089CDFC /* DMMainWindowController.m */; };
 		018261FE10068DE30089CDFC /* DMStartup.m in Sources */ = {isa = PBXBuildFile; fileRef = 018261DC10068DE30089CDFC /* DMStartup.m */; };
 		018261FF10068DE30089CDFC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 018261DD10068DE30089CDFC /* main.m */; };
-		0182620110068DE30089CDFC /* DMSequenceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 018261E210068DE30089CDFC /* DMSequenceManager.m */; };
 		0182620210068DE30089CDFC /* DMLaunchAgentSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 018261E510068DE30089CDFC /* DMLaunchAgentSettings.m */; };
 		0182620410068DE30089CDFC /* DMFileIconValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 018261EC10068DE30089CDFC /* DMFileIconValueTransformer.m */; };
 		0182620510068DE30089CDFC /* DMFileNameValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 018261EE10068DE30089CDFC /* DMFileNameValueTransformer.m */; };
@@ -30,6 +29,8 @@
 		01826297100697D40089CDFC /* twentyfour in CopyFiles */ = {isa = PBXBuildFile; fileRef = 01826296100697D40089CDFC /* twentyfour */; };
 		01C6A7B01044F0D600E5DBB6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 01C6A7AF1044F0D600E5DBB6 /* Localizable.strings */; };
 		01D6CBE3104F858500642DED /* 24 Hour Movie Help in Resources */ = {isa = PBXBuildFile; fileRef = 01D6CBE2104F858500642DED /* 24 Hour Movie Help */; };
+		01D6EC51106C42DF00F32B0D /* DMSequenceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D6EC50106C42DF00F32B0D /* DMSequenceManager.m */; };
+		01D6EC52106C42DF00F32B0D /* DMSequenceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D6EC50106C42DF00F32B0D /* DMSequenceManager.m */; };
 		01E338DF104CDACA00949973 /* DMDragDropBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E338DE104CDACA00949973 /* DMDragDropBox.m */; };
 		01E33923104CE6E500949973 /* DMFileDropAreaDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E33922104CE6E500949973 /* DMFileDropAreaDelegate.m */; };
 		01E8020510043441003281A6 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01E8020410043441003281A6 /* MainMenu.xib */; };
@@ -76,8 +77,6 @@
 		018261DB10068DE30089CDFC /* DMStartup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMStartup.h; sourceTree = "<group>"; };
 		018261DC10068DE30089CDFC /* DMStartup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMStartup.m; sourceTree = "<group>"; };
 		018261DD10068DE30089CDFC /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		018261E110068DE30089CDFC /* DMSequenceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMSequenceManager.h; sourceTree = "<group>"; };
-		018261E210068DE30089CDFC /* DMSequenceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMSequenceManager.m; sourceTree = "<group>"; };
 		018261E410068DE30089CDFC /* DMLaunchAgentSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLaunchAgentSettings.h; sourceTree = "<group>"; };
 		018261E510068DE30089CDFC /* DMLaunchAgentSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMLaunchAgentSettings.m; sourceTree = "<group>"; };
 		018261E810068DE30089CDFC /* The Twenty-Four Hour Movie_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "The Twenty-Four Hour Movie_Prefix.pch"; path = "../The Twenty-Four Hour Movie_Prefix.pch"; sourceTree = "<group>"; };
@@ -98,6 +97,8 @@
 		01826296100697D40089CDFC /* twentyfour */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = twentyfour; path = build/Release/twentyfour; sourceTree = SOURCE_ROOT; };
 		01C6A7AD1044F0D200E5DBB6 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
 		01D6CB9C104F857F00642DED /* English */ = {isa = PBXFileReference; lastKnownFileType = folder; name = English; path = "English.lproj/24 Hour Movie Help"; sourceTree = "<group>"; };
+		01D6EC4F106C42DF00F32B0D /* DMSequenceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMSequenceManager.h; sourceTree = "<group>"; };
+		01D6EC50106C42DF00F32B0D /* DMSequenceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMSequenceManager.m; sourceTree = "<group>"; };
 		01E19873100C0C6300CA94AF /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		01E338DD104CDACA00949973 /* DMDragDropBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMDragDropBox.h; sourceTree = "<group>"; };
 		01E338DE104CDACA00949973 /* DMDragDropBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMDragDropBox.m; sourceTree = "<group>"; };
@@ -150,7 +151,6 @@
 				01E33920104CE6D800949973 /* Delegates */,
 				018261DA10068DE30089CDFC /* Helpers */,
 				018261DD10068DE30089CDFC /* main.m */,
-				018261DE10068DE30089CDFC /* Managers */,
 				018261E310068DE30089CDFC /* Models */,
 				018261E910068DE30089CDFC /* Views */,
 			);
@@ -175,15 +175,6 @@
 				0115270E105B884100D18F57 /* DMUserDefaults.m */,
 			);
 			path = Helpers;
-			sourceTree = "<group>";
-		};
-		018261DE10068DE30089CDFC /* Managers */ = {
-			isa = PBXGroup;
-			children = (
-				018261E110068DE30089CDFC /* DMSequenceManager.h */,
-				018261E210068DE30089CDFC /* DMSequenceManager.m */,
-			);
-			path = Managers;
 			sourceTree = "<group>";
 		};
 		018261E310068DE30089CDFC /* Models */ = {
@@ -247,8 +238,18 @@
 			children = (
 				018262621006941E0089CDFC /* DMConstants.h */,
 				018262631006941E0089CDFC /* DMConstants.m */,
+				01D6EC4E106C42DF00F32B0D /* Managers */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		01D6EC4E106C42DF00F32B0D /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				01D6EC4F106C42DF00F32B0D /* DMSequenceManager.h */,
+				01D6EC50106C42DF00F32B0D /* DMSequenceManager.m */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		01E33920104CE6D800949973 /* Delegates */ = {
@@ -410,6 +411,7 @@
 				0115270F105B884100D18F57 /* DMUserDefaults.m in Sources */,
 				01826240100690160089CDFC /* DMDesktopManager.m in Sources */,
 				01826241100690160089CDFC /* twentyfour.m in Sources */,
+				01D6EC52106C42DF00F32B0D /* DMSequenceManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,7 +424,6 @@
 				018261FD10068DE30089CDFC /* DMMainWindowController.m in Sources */,
 				018261FE10068DE30089CDFC /* DMStartup.m in Sources */,
 				018261FF10068DE30089CDFC /* main.m in Sources */,
-				0182620110068DE30089CDFC /* DMSequenceManager.m in Sources */,
 				0182620210068DE30089CDFC /* DMLaunchAgentSettings.m in Sources */,
 				0182620410068DE30089CDFC /* DMFileIconValueTransformer.m in Sources */,
 				0182620510068DE30089CDFC /* DMFileNameValueTransformer.m in Sources */,
@@ -431,6 +432,7 @@
 				013DDB75104CC87700129CAF /* DMReversibleMappingValueTransformer.m in Sources */,
 				01E338DF104CDACA00949973 /* DMDragDropBox.m in Sources */,
 				01E33923104CE6E500949973 /* DMFileDropAreaDelegate.m in Sources */,
+				01D6EC51106C42DF00F32B0D /* DMSequenceManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

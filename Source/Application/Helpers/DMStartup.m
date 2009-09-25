@@ -148,12 +148,15 @@
 	NSData *ourExecutable = [[NSData alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForAuxiliaryExecutable:@"twentyfour"] options:NSUncachedRead error:&error];
 	if (error) {
 		NSLog(@"Couldn't load the data for the reference twentyfour executable: %@", [error localizedDescription]);
+		if (ourExecutable) [ourExecutable release];
 		return;
 	}
 	
 	NSData *wildExecutable = [[NSData alloc] initWithContentsOfFile:executablePath options:NSUncachedRead error:&error];
 	if (error) {
 		NSLog(@"Couldn't load the data for the installed twentyfour executable: %@", [error localizedDescription]);
+		if (ourExecutable) [ourExecutable release];
+		if (wildExecutable) [wildExecutable release];
 		return;
 	}
 	
@@ -161,6 +164,8 @@
 		[[NSFileManager defaultManager] removeItemAtPath:executablePath error:&error];
 		if (error) {
 			NSLog(@"Couldn't remove the old twentyfour executable: %@", [error localizedDescription]);
+			[ourExecutable release];
+			[wildExecutable release];
 			return;
 		}
 		[self installExecutable];

@@ -26,7 +26,10 @@
 
 - (id) transformedValue:(id)value {
 	if (!value) return [NSImage imageNamed:@""];
-	else return [[NSWorkspace sharedWorkspace] iconForFile:(NSString *)value];
+	else {
+		NSString *path = [[DMSequenceManager sequenceManager] imageDirectoryPathFromBookmark:((NSData *)value)];
+		return [[NSWorkspace sharedWorkspace] iconForFile:path];
+	}
 }
 
 @end

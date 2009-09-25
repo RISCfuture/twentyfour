@@ -26,7 +26,10 @@
 
 - (id) transformedValue:(id)value {
 	if (!value) return NULL;
-	else return [[NSFileManager defaultManager] displayNameAtPath:(NSString *)value];
+	else {
+		NSString *path = [[DMSequenceManager sequenceManager] imageDirectoryPathFromBookmark:((NSData *)value)];
+		return [[NSFileManager defaultManager] displayNameAtPath:path];
+	}
 }
 
 @end

@@ -44,10 +44,12 @@
 
 - (BOOL) dragDropBox:(DMDragDropBox *)box performDrag:(id<NSDraggingInfo>)drag {
 	NSArray *URLs = [[drag draggingPasteboard] readObjectsForClasses:[NSArray arrayWithObject:[NSURL class]] options:NULL];
-	NSURL *URL = [URLs objectAtIndex:0];
-	NSString *path = [URL path];
-	[[NSUserDefaults standardUserDefaults] setObject:path forKey:DMUserDefaultsKeyImageDirectory];
-	return YES;
+	NSData *bookmark = [[DMSequenceManager sequenceManager] bookmarkForImageDirectory:[URLs objectAtIndex:0]];
+	if (bookmark) {
+		[[NSUserDefaults standardUserDefaults] setObject:bookmark forKey:DMUserDefaultsKeyImageDirectory];
+		return YES;
+	}
+	else return NO;
 }
 
 @end

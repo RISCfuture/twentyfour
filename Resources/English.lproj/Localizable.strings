@@ -1,8 +1,8 @@
 /* %@ = folder path */
-"I couldn't create the %@ folder. I need to be able to create this folder to continue." = "I couldn't create the %@ folder. I need to be able to create this folder to continue.";
+"I couldn't create the %@ folder. I need to be able to create this folder to continue." = "I couldn’t create the %@ folder. I need to be able to create this folder to continue.";
 
 /* No comment provided by engineer. */
-"I couldn't install the helper application into this program's Application Support folder. I must be able to do so to continue." = "I couldn't install the helper application into this program's Application Support folder. I must be able to do so to continue.";
+"I couldn't install the helper application into this program's Application Support folder. I must be able to do so to continue." = "I couldn’t install the helper application into this program’s Application Support folder. I must be able to do so to continue.";
 
 /* %@ = file blocking a folder path */
 "Please move the %@ file." = "Please move the %@ file.";
@@ -20,10 +20,10 @@
 "There is a folder blocking a file I need to create." = "There is a folder blocking a file I need to create.";
 
 /* No comment provided by engineer. */
-"I couldn't activate the launch agent. Your desktop picture will be unchanged." = "I couldn't activate the launch agent. Your desktop picture will be unchanged.";
+"I couldn't activate the launch agent. Your desktop picture will be unchanged." = "I couldn’t activate the launch agent. Your desktop picture will be unchanged.";
 
 /* No comment provided by engineer. */
-"I wasn't able to write your settings to a launch agent file." = "I wasn't able to write your settings to a launch agent file.";
+"I wasn't able to write your settings to a launch agent file." = "I wasn’t able to write your settings to a launch agent file.";
 
 /* No comment provided by engineer. */
 "More information might be available from Console." = "More information might be available from Console.";
@@ -33,4 +33,16 @@
 
 /* %@ = path to launch agent plist */
 "Please move the folder at %@ and restart this program." = "Please move the folder at %@ and restart this program.";
+
+/* No comment provided by engineer. */
+"I wasn't able to change your image sequence folder. Please choose a different folder." = "I wasn’t able to change your image sequence folder. Please choose a different folder.";
+
+/* No comment provided by engineer. */
+"I wasn't able to find your image sequence folder. Please choose a different folder." = "I wasn’t able to find your image sequence folder. Please choose a different folder.";
+
+/* No comment provided by engineer. */
+"You will have to choose a different image sequence folder." = "You will have to choose a different image sequence folder.";
+
+/* No comment provided by engineer. */
+"Your image sequence folder can no longer be found." = "Your image sequence folder can no longer be found.";
 

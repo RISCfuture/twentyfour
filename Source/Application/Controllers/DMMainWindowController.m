@@ -14,6 +14,9 @@
 		if (!result) NSBeep();
 	}
 	else NSBeep();
+	
+	[script release];
+	[scriptURL release];
 }
 
 - (IBAction) openHelp:(id)sender {
@@ -41,9 +44,13 @@
 - (void) openPanelDidEnd:(NSOpenPanel *)panel returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo {
 	if (returnCode != NSOKButton) return;
 	if ([[panel filenames] count] == 0) return;
-	[[NSUserDefaults standardUserDefaults] setObject:[[panel filenames] objectAtIndex:0] forKey:DMUserDefaultsKeyImageDirectory];
-	[launchAgentSettings toggleLaunchAgent:NO];
-	[launchAgentSettings toggleLaunchAgent:YES];
+	
+	NSData *bookmark = [[DMSequenceManager sequenceManager] bookmarkForImageDirectory:[[panel filenames] objectAtIndex:0]];
+	if (bookmark) {
+		[[NSUserDefaults standardUserDefaults] setObject:bookmark forKey:DMUserDefaultsKeyImageDirectory];
+		[launchAgentSettings toggleLaunchAgent:NO];
+		[launchAgentSettings toggleLaunchAgent:YES];
+	}
 }
 
 @end

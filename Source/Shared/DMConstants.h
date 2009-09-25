@@ -20,8 +20,8 @@
 
 /*!
  @const DMUserDefaultsKeyImageDirectory
- @abstract The user defaults key whose value is the directory in which the image
- sequence is located.
+ @abstract The user defaults key whose value is data describing a URL bookmark
+ pointing to the directory in which the image sequence is located.
  */
 
 NSString *DMUserDefaultsKeyImageDirectory;
