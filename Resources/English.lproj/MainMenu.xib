@@ -10,9 +10,7 @@
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin</string>
 			<string key="NS.object.0">732</string>
 		</object>
-		<array class="NSMutableArray" key="IBDocument.EditedObjectIDs">
-			<integer value="372"/>
-		</array>
+		<array class="NSMutableArray" key="IBDocument.EditedObjectIDs"/>
 		<array key="IBDocument.PluginDependencies">
 			<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 		</array>
@@ -1065,7 +1063,7 @@
 			<object class="NSWindowTemplate" id="972006081">
 				<int key="NSWindowStyleMask">7</int>
 				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{489, 270}, {424, 424}}</string>
+				<string key="NSWindowRect">{{1064, 568}, {424, 424}}</string>
 				<int key="NSWTFlags">1946157056</int>
 				<string key="NSWindowTitle">The Twenty-Four Hour Movie</string>
 				<string key="NSWindowClass">NSWindow</string>
@@ -1073,7 +1071,7 @@
 				<string key="NSWindowContentMaxSize">{424, 424}</string>
 				<string key="NSWindowContentMinSize">{424, 424}</string>
 				<object class="NSView" key="NSWindowView" id="439893737">
-					<reference key="NSNextResponder"/>
+					<nil key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
 					<array class="NSMutableArray" key="NSSubviews">
 						<object class="NSButton" id="964236439">
@@ -1793,9 +1791,8 @@
 						</object>
 					</array>
 					<string key="NSFrameSize">{424, 424}</string>
-					<reference key="NSSuperview"/>
 				</object>
-				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
+				<string key="NSScreenRect">{{0, 0}, {2560, 1578}}</string>
 				<string key="NSMinSize">{424, 446}</string>
 				<string key="NSMaxSize">{424, 446}</string>
 			</object>
