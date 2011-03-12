@@ -26,7 +26,7 @@
 		01826241100690160089CDFC /* twentyfour.m in Sources */ = {isa = PBXBuildFile; fileRef = 018261F710068DE30089CDFC /* twentyfour.m */; };
 		018262641006941E0089CDFC /* DMConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 018262631006941E0089CDFC /* DMConstants.m */; };
 		01826266100694750089CDFC /* DMConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 018262631006941E0089CDFC /* DMConstants.m */; };
-		01826297100697D40089CDFC /* twentyfour in CopyFiles */ = {isa = PBXBuildFile; fileRef = 01826296100697D40089CDFC /* twentyfour */; };
+		0194A32A132A21E300EDC9DE /* twentyfour in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0182623010068FC50089CDFC /* twentyfour */; };
 		01C6A7B01044F0D600E5DBB6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 01C6A7AF1044F0D600E5DBB6 /* Localizable.strings */; };
 		01D6CBE3104F858500642DED /* 24 Hour Movie Help in Resources */ = {isa = PBXBuildFile; fileRef = 01D6CBE2104F858500642DED /* 24 Hour Movie Help */; };
 		01D6EC51106C42DF00F32B0D /* DMSequenceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D6EC50106C42DF00F32B0D /* DMSequenceManager.m */; };
@@ -56,7 +56,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 6;
 			files = (
-				01826297100697D40089CDFC /* twentyfour in CopyFiles */,
+				0194A32A132A21E300EDC9DE /* twentyfour in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,7 +70,7 @@
 		013DDB0D104CBD1100129CAF /* DMMappingValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMMappingValueTransformer.m; sourceTree = "<group>"; };
 		013DDB73104CC87700129CAF /* DMReversibleMappingValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMReversibleMappingValueTransformer.h; sourceTree = "<group>"; };
 		013DDB74104CC87700129CAF /* DMReversibleMappingValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMReversibleMappingValueTransformer.m; sourceTree = "<group>"; };
-		0182601A100544C10089CDFC /* OpenDesktopPreferencePane.scpt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.scpt; path = OpenDesktopPreferencePane.scpt; sourceTree = "<group>"; };
+		0182601A100544C10089CDFC /* OpenDesktopPreferencePane.scpt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; path = OpenDesktopPreferencePane.scpt; sourceTree = "<group>"; };
 		018261871005A0C20089CDFC /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = /System/Library/Frameworks/Security.framework; sourceTree = "<absolute>"; };
 		018261D810068DE30089CDFC /* DMMainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMMainWindowController.h; sourceTree = "<group>"; };
 		018261D910068DE30089CDFC /* DMMainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMMainWindowController.m; sourceTree = "<group>"; };
@@ -374,7 +374,11 @@
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "The Twenty-Four Hour Movie" */;
 			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* The Twenty-Four Hour Movie */;
 			projectDirPath = "";
 			projectRoot = "";

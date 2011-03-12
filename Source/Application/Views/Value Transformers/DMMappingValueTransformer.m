@@ -9,7 +9,7 @@
 #pragma mark Initializing and deallocating
 
 - (id) initWithDictionary:(NSDictionary *)dictionary {
-	if (self = [super init]) {
+	if ((self = [super init])) {
 		mappings = [dictionary retain];
 	}
 	return self;

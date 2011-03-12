@@ -3,7 +3,6 @@
 #define SECONDS_PER_DAY 86400.0
 
 static DMDesktopManager *sharedDesktopManager = NULL;
-static NSDictionary *sharedSettings = NULL;
 
 @interface DMDesktopManager (Private)
 
