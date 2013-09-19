@@ -70,7 +70,7 @@ static DMSequenceManager *sharedSequenceManager = NULL;
  Do not allow this class to be memory managed.
  */
 
-- (void) release {
+- (oneway void) release {
 	// do nothing
 }
 
@@ -91,7 +91,7 @@ static DMSequenceManager *sharedSequenceManager = NULL;
 	else [[NSException exceptionWithName:NSInvalidArgumentException reason:@"bookmarkForImageDirectory: must take an NSURL or NSString" userInfo:NULL] raise];
 	
 	NSError *error = NULL;
-	NSData *bookmark = [directoryURL bookmarkDataWithOptions:NULL includingResourceValuesForKeys:NULL relativeToURL:NULL error:&error];
+	NSData *bookmark = [directoryURL bookmarkDataWithOptions:0 includingResourceValuesForKeys:NULL relativeToURL:NULL error:&error];
 	[directoryURL release];
 	
 	if (error) {
@@ -151,7 +151,7 @@ static DMSequenceManager *sharedSequenceManager = NULL;
 - (NSURL *) imageDirectoryURLFromBookmark:(NSData *)bookmark withAlert:(BOOL)alert {
 	BOOL isStale = NO;
 	NSError *error = NULL;
-	NSURL *imageDirectoryURL = [NSURL URLByResolvingBookmarkData:bookmark options:NULL relativeToURL:NULL bookmarkDataIsStale:&isStale error:&error];
+	NSURL *imageDirectoryURL = [NSURL URLByResolvingBookmarkData:bookmark options:0 relativeToURL:NULL bookmarkDataIsStale:&isStale error:&error];
 	if (isStale) {
 		if (alert) {
 			NSAlert *alert = [[NSAlert alloc] init];

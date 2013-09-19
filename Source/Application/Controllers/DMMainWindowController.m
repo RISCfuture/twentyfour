@@ -31,26 +31,18 @@
 	[panel setCanChooseDirectories:YES];
 	[panel setCanCreateDirectories:YES];
 	[panel setAllowsMultipleSelection:NO];
-	
-	[panel beginSheetForDirectory:NULL file:NULL modalForWindow:window modalDelegate:self didEndSelector:@selector(openPanelDidEnd:returnCode:contextInfo:) contextInfo:NULL];
-}
-
-#pragma mark Open panel delegate
-
-/*
- Sets the image directory to the folder returned by the open panel.
- */
-
-- (void) openPanelDidEnd:(NSOpenPanel *)panel returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo {
-	if (returnCode != NSOKButton) return;
-	if ([[panel filenames] count] == 0) return;
-	
-	NSData *bookmark = [[DMSequenceManager sequenceManager] bookmarkForImageDirectory:[[panel filenames] objectAtIndex:0]];
-	if (bookmark) {
-		[[NSUserDefaults standardUserDefaults] setObject:bookmark forKey:DMUserDefaultsKeyImageDirectory];
-		[launchAgentSettings toggleLaunchAgent:NO];
-		[launchAgentSettings toggleLaunchAgent:YES];
-	}
+    
+    [panel beginSheetModalForWindow:window completionHandler:^(NSInteger returnCode) {
+        if (returnCode != NSFileHandlingPanelOKButton) return;
+        if ([[panel URLs] count] == 0) return;
+        
+        NSData *bookmark = [[DMSequenceManager sequenceManager] bookmarkForImageDirectory:[[panel URLs] objectAtIndex:0]];
+        if (bookmark) {
+            [[NSUserDefaults standardUserDefaults] setObject:bookmark forKey:DMUserDefaultsKeyImageDirectory];
+            [launchAgentSettings toggleLaunchAgent:NO];
+            [launchAgentSettings toggleLaunchAgent:YES];
+        }
+    }];
 }
 
 @end

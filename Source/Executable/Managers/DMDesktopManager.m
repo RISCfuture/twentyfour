@@ -52,7 +52,7 @@ static DMDesktopManager *sharedDesktopManager = NULL;
 	return UINT_MAX;
 }
 
-- (void) release {
+- (oneway void) release {
 	// do nothing
 }
 
@@ -80,13 +80,13 @@ static DMDesktopManager *sharedDesktopManager = NULL;
 		return;
 	}
 	
-	DMSequenceLength sequenceLength = [(NSNumber *)[defaults objectForKey:DMUserDefaultsKeyPeriod] integerValue];
+	DMSequenceLength sequenceLength = (DMSequenceLength)[(NSNumber *)[defaults objectForKey:DMUserDefaultsKeyPeriod] integerValue];
 	
 	NSUInteger imageNumber = [self imageNumber:[files count] forSequenceLength:sequenceLength];
 	NSURL *URL = [files objectAtIndex:imageNumber];
 	NSError *error = NULL;
 	
-	DMScreenSettings screenSetting = [(NSNumber *)[defaults objectForKey:DMUserDefaultsKeyDesktopScreens] unsignedIntegerValue];
+	DMScreenSettings screenSetting = (DMScreenSettings)[(NSNumber *)[defaults objectForKey:DMUserDefaultsKeyDesktopScreens] unsignedIntegerValue];
 	if (screenSetting == DMScreenSettingsAllScreens) {
 		for (NSScreen *screen in [NSScreen screens])
 			[[NSWorkspace sharedWorkspace] setDesktopImageURL:URL forScreen:screen options:desktopOptions error:&error];
@@ -148,7 +148,7 @@ static DMDesktopManager *sharedDesktopManager = NULL;
 	}
 	
 	NSDate *startTime = [calendar dateFromComponents:start];
-	NSDate *endTime = [calendar dateByAddingComponents:end toDate:startTime options:NULL];
+	NSDate *endTime = [calendar dateByAddingComponents:end toDate:startTime options:0];
 	[end release];
 	[calendar release];
 	
